@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://dje4fx7ykiu4s"]
+
+[ext_resource type="Texture2D" uid="uid://6l22sxhj1pfu" path="res://Assets/Vector/topdownTanks_vector.svg" id="1_6eej4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oh2fb"]
+size = Vector2(18, 18)
+
+[node name="player" type="CharacterBody2D"]
+
+[node name="body" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_6eej4")
+region_enabled = true
+region_rect = Rect2(142, 0, 42, 40)
+
+[node name="PointLight2D" type="PointLight2D" parent="body"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_oh2fb")
+
+[node name="cannon" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_6eej4")
+offset = Vector2(0, 10)
+region_enabled = true
+region_rect = Rect2(228, 42, 8, 26)
+
+[node name="Marker2D" type="Marker2D" parent="cannon"]
+position = Vector2(0, 25)
+scale = Vector2(2, 2)

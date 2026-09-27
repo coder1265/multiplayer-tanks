@@ -1,0 +1,64 @@
+[gd_scene load_steps=2 format=3 uid="uid://c17mhcybjxlqf"]
+
+[ext_resource type="Script" path="res://script/tank_customisation.gd" id="1_d3ocq"]
+
+[node name="tank_customisation" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d3ocq")
+
+[node name="Container" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_right = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Hullpreview" type="TextureRect" parent="Container"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="Barrelpreview" type="TextureRect" parent="Container"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="Bulletpreview" type="TextureRect" parent="Container"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="Statslabel" type="RichTextLabel" parent="Container"]
+unique_name_in_owner = true
+layout_mode = 2
+bbcode_enabled = true
+
+[node name="Colour_option" type="OptionButton" parent="Container"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Hull_option" type="OptionButton" parent="Container"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Barrel_option" type="OptionButton" parent="Container"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Extra_option" type="OptionButton" parent="Container"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Confirm" type="Button" parent="Container"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Confirm"

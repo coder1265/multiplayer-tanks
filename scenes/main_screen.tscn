@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bt827wqc5umis"]
 
-[ext_resource type="Script" path="res://main.gd" id="1_4i5my"]
+[ext_resource type="Script" path="res://script/main.gd" id="1_4i5my"]
 [ext_resource type="Texture2D" uid="uid://dwx83iarel0ts" path="res://Assets/images/menu/title/background.png" id="2_e8afv"]
 [ext_resource type="Texture2D" uid="uid://yghuedkkatoc" path="res://Assets/images/host.png" id="3_uhnlq"]
 
@@ -13,14 +13,13 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4i5my")
 
-[node name="ColorRect" type="TextureRect" parent="."]
+[node name="main_screen_background" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 1154.0
 offset_bottom = 648.0
 texture = ExtResource("2_e8afv")
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="."]
-custom_minimum_size = Vector2(10, 0)
+[node name="main_screen_buttons" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -28,34 +27,18 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -57.5
-offset_top = -81.0
+offset_top = -46.0
 offset_right = 57.5
-offset_bottom = 81.0
+offset_bottom = 46.0
 grow_horizontal = 2
 grow_vertical = 2
-metadata/_edit_group_ = true
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer2"]
-layout_mode = 2
-
-[node name="ip_input" type="LineEdit" parent="VBoxContainer2/VBoxContainer2"]
-layout_mode = 2
-placeholder_text = "127.0.0.1 (Normally)"
-
-[node name="name_input" type="LineEdit" parent="VBoxContainer2/VBoxContainer2"]
+[node name="name_input" type="LineEdit" parent="main_screen_buttons"]
 layout_mode = 2
 placeholder_text = "Enter name"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2"]
-layout_mode = 2
-
-[node name="host_button" type="TextureButton" parent="VBoxContainer2/VBoxContainer"]
+[node name="play_button" type="TextureButton" parent="main_screen_buttons"]
 layout_mode = 2
 texture_normal = ExtResource("3_uhnlq")
 
-[node name="join_button" type="Button" parent="VBoxContainer2/VBoxContainer"]
-layout_mode = 2
-text = "Join?"
-
-[connection signal="pressed" from="VBoxContainer2/VBoxContainer/host_button" to="." method="_on_host_btn_pressed"]
-[connection signal="pressed" from="VBoxContainer2/VBoxContainer/join_button" to="." method="_on_join_btn_pressed"]
+[connection signal="pressed" from="main_screen_buttons/play_button" to="." method="_on_host_btn_pressed"]
